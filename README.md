@@ -1,48 +1,66 @@
-# Ahmed Negm | IT Support & Systems Administration
+# Ahmed Negm | IT Support Specialist & Automation
 
-IT Support Specialist based in Cairo, Egypt, with professional experience at **IT Pillars (2021–2024)** and additional freelance technical assignments.
+**IT Support • Microsoft 365 • Google Workspace • Networking • n8n Automation**
 
-This public repository brings together my **networking study notes** and **IT support documentation samples**. My interests include Windows and hardware troubleshooting, networking, Microsoft 365, Google Workspace, user administration, Linux, and workflow automation.
+Cairo, Egypt | Open to remote IT Support and IT Operations opportunities
 
-> **Portfolio note:** Documentation here is educational or demonstrative. It does not contain confidential employer/client information and should not be interpreted as a record of real support tickets.
+I have professional **IT Support / IT Administration experience at IT Pillars (2021–2024)** and have worked independently on technical support and freelance projects since 2024. My areas of work include Windows and endpoint troubleshooting, Microsoft 365, Google Workspace, Active Directory, connectivity, Excel reporting, Linux, and workflow automation.
 
-## IT support: practical resources
+I focus on **practical troubleshooting, clear documentation, and reducing repetitive work**.
 
-| Resource | What's inside |
+## Featured portfolio project
+
+### [n8n IT Helpdesk Automation: Ticket Triage & Escalation](projects/n8n-helpdesk-automation/README.md)
+
+A **public learning project** with an importable n8n workflow, example support requests, JavaScript-based priority classification (P1/P2/P3), routing, and separate escalation / standard-support branches.
+
+- [Importable n8n workflow](projects/n8n-helpdesk-automation/n8n-workflow.json)
+- [Ticket classification code](projects/n8n-helpdesk-automation/triage.js)
+- [JavaScript test cases](projects/n8n-helpdesk-automation/tests/triage.test.cjs)
+
+**Clear scope:** This is a demonstrative project using fictional examples; it is not presented as a paid client deployment or as an AI-powered workflow.
+
+## IT support resources
+
+| Public resource | What it demonstrates |
 | --- | --- |
-| [IT Support Troubleshooting Playbook](docs/it-support-troubleshooting-playbook.md) | Structured triage and troubleshooting reference for Windows, networking, Microsoft 365, Google Workspace, Active Directory, and Linux |
-| [Support Ticket Template](docs/support-ticket-template.md) | Reusable ticket fields plus a clearly labeled fictional example |
+| [Troubleshooting Playbook](docs/it-support-troubleshooting-playbook.md) | A systematic support approach for Windows, networks, Microsoft 365, Google Workspace, Active Directory and Linux |
+| [Support Ticket Template](docs/support-ticket-template.md) | Consistent recording of impact, root cause, approvals, action and closure |
+| [Freelance IT & Automation Overview](docs/freelance-it-and-automation.md) | Technical work areas, independent work, and automation service capabilities |
 
-## Network fundamentals: study notes
+## Technical skills
 
-| Topic | Notes |
-| --- | --- |
-| OSI model | [Seven layers and their roles](notes/OSI_model_notes.md) |
-| IPv4 addressing | [Address formats, private ranges, subnet masks, and special addresses](notes/IPv4_notes.md) |
+- **End-user IT support:** Windows, hardware and software troubleshooting, remote assistance, technical documentation
+- **Accounts & productivity:** Microsoft 365, Google Workspace, Active Directory, user access, Microsoft Excel
+- **Networking:** TCP/IP, IPv4, DNS / DHCP, LAN / Wi-Fi, connectivity troubleshooting
+- **Systems:** Linux administration, cloud fundamentals
+- **Automation:** n8n workflows, JavaScript scripting, data mapping, conditional routing, error handling, Git and GitHub
+- **AI learning:** OpenAI concepts, agent workflows and responsible use of AI-assisted automation
 
-These notes document parts of my **CompTIA Network+ self-study**. They are not evidence of having passed a certification exam.
+## Completed training & ongoing development
 
-## Technical areas
+**Completed: OpenAI Academy**
+- AI Foundations
+- Applied AI Foundations
+- Agents and Workflows
 
-- **End-user support:** Windows troubleshooting, PC hardware and software issues, remote support, issue documentation
-- **Accounts and collaboration:** Microsoft 365, Google Workspace, Active Directory, user accounts and permissions
-- **Networking:** TCP/IP, IPv4, network troubleshooting, OSI fundamentals
-- **Systems:** Linux, cloud fundamentals, technical documentation
-- **Productivity and automation:** Excel, scripting, workflow automation, Git and GitHub
+**n8n:** Completed course modules and continued practical study of triggers, polling and webhooks, Code nodes, Google Sheets integration concepts, error handling, and workflow structure. The names of any additional completed n8n courses are not listed because they have not been provided.
 
-## Current learning
+**Networking study:** CompTIA Network+ preparation. My existing study notes:
+- [OSI Model](notes/OSI_model_notes.md)
+- [IPv4 Addressing](notes/IPv4_notes.md)
 
-- CompTIA Network+ study and networking fundamentals
-- Workflow automation with n8n
-- Continued exploration of cloud and AI tooling
+These study notes are not represented as completed CCNA, AWS, Azure, or Network+ certifications.
 
-CCNA and AWS/Azure labs may be added in the future; no completed labs or certifications are implied here.
+## About freelance work
+
+I have worked on independent technical support assignments alongside self-directed technology projects. Public materials here show **examples of my technical approach** and do not expose customer records, client names or private systems.
 
 ## Contact
 
-- GitHub: [@ahmednegm91](https://github.com/ahmednegm91)
-- Email: ahmednegm91@gmail.com
+- Email: **ahmednegm91@gmail.com**
+- GitHub: [github.com/ahmednegm91](https://github.com/ahmednegm91)
 
 ---
 
-**Last documentation refresh:** November 2026. Existing network notes were preserved.
+**Portfolio updated:** November 2026. The earlier OSI and IPv4 notes have been preserved.
