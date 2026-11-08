@@ -1,0 +1,164 @@
+{
+  "name": "Portfolio Demo | IT Helpdesk Ticket Triage and Escalation",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be841",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const demoTickets = [\n  {\n    \"ticketId\": \"DEMO-001\",\n    \"subject\": \"Outlook service unavailable\",\n    \"description\": \"Office staff cannot access Outlook; service outage\",\n    \"category\": \"m365\",\n    \"affectedUsers\": 40\n  },\n  {\n    \"ticketId\": \"DEMO-002\",\n    \"subject\": \"Account access denied\",\n    \"description\": \"New colleague cannot access shared drive\",\n    \"category\": \"account\",\n    \"affectedUsers\": 1\n  },\n  {\n    \"ticketId\": \"DEMO-003\",\n    \"subject\": \"Printer not responding\",\n    \"description\": \"Printer is slow\",\n    \"category\": \"hardware\",\n    \"affectedUsers\": 1\n  },\n  {\n    \"ticketId\": \"DEMO-004\",\n    \"subject\": \"Suspicious phishing message\",\n    \"description\": \"User reported a phishing email\",\n    \"category\": \"security\",\n    \"affectedUsers\": 1\n  },\n  {\n    \"ticketId\": \"DEMO-005\",\n    \"subject\": \"Wi-Fi slow\",\n    \"description\": \"One desk has slow wireless connectivity\",\n    \"category\": \"network\",\n    \"affectedUsers\": 1\n  }\n];\nreturn demoTickets.map(ticket => ({ json: ticket }));"
+      },
+      "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be842",
+      "name": "Create Demo Tickets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "function classifyTicket(ticket) {\n  const subject = String(ticket.subject || \"\").trim();\n  const description = String(ticket.description || \"\").trim();\n  if (!subject && !description) throw new Error(\"Ticket must contain a subject or description\");\n  const category = String(ticket.category || \"general\").trim().toLowerCase();\n  const affectedUsers = Math.max(1, Math.floor(Number(ticket.affectedUsers) || 1));\n  const content = (subject + \" \" + description).toLowerCase();\n  const isSecurity = /\\b(phishing|malware|ransomware|compromised|data breach|suspicious sign-in)\\b/.test(content);\n  const isOutage = /\\b(outage|system down|service down|offline|unavailable)\\b/.test(content);\n  const accessBlocked = /\\b(cannot log in|can't log in|unable to sign in|locked out|access denied|permission denied|cannot access)\\b/.test(content);\n  const priority = isSecurity || (isOutage && affectedUsers >= 5) ? \"P1\" : isOutage || accessBlocked || affectedUsers >= 5 ? \"P2\" : \"P3\";\n  let queue = \"General IT\";\n  if (isSecurity) queue = \"Security Escalation\";\n  else if (/\\b(account|identity|outlook|email|m365|microsoft 365|google workspace|drive|access)\\b/.test(category + \" \" + content)) queue = \"Identity & Collaboration\";\n  else if (/\\b(network|wifi|wi-fi|dns|vpn|internet|router)\\b/.test(category + \" \" + content)) queue = \"Network Support\";\n  else if (/\\b(laptop|desktop|windows|printer|hardware|endpoint)\\b/.test(category + \" \" + content)) queue = \"Endpoint Support\";\n  const slaHours = { P1: 1, P2: 4, P3: 24 }[priority];\n  const nextAction = isSecurity\n    ? \"Escalate immediately to security team; do not reset credentials without verification.\"\n    : priority === \"P1\" ? \"Notify on-call IT lead and begin incident coordination.\"\n    : priority === \"P2\" ? \"Assign to support queue and confirm business impact.\"\n    : \"Add to standard queue and acknowledge receipt.\";\n  return {\n    ticketId: String(ticket.ticketId || \"UNASSIGNED\"),\n    subject: subject || \"(no subject)\",\n    category, affectedUsers, priority, queue, slaHours,\n    needsEscalation: priority === \"P1\",\n    reason: isSecurity ? \"Security keywords detected\" : isOutage ? \"Potential service outage\" : accessBlocked ? \"User cannot access a service\" : affectedUsers >= 5 ? \"Multiple users affected\" : \"Standard support request\",\n    nextAction,\n    classificationMethod: \"Transparent rule-based demo; requires human validation\"\n  };\n}\n\nreturn $input.all().map((item, index) => ({ json: classifyTicket(item.json), pairedItem: { item: index } }));"
+      },
+      "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be843",
+      "name": "Classify and Route",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1f61f70-a046-4c39-a980-41d2cdcd7b11",
+              "leftValue": "={{ $json.needsEscalation }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be844",
+      "name": "Needs Immediate Escalation?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        880,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "return $input.all().map((item, index) => ({ json: { ...item.json, route: 'ESCALATION', routingNote: 'Requires immediate human review; connect to an approved alert channel after setup.' }, pairedItem: { item: index } }));"
+      },
+      "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be845",
+      "name": "Escalation Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "return $input.all().map((item, index) => ({ json: { ...item.json, route: 'STANDARD_QUEUE', routingNote: 'Ready to log in an approved ticketing system or spreadsheet after setup.' }, pairedItem: { item: index } }));"
+      },
+      "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be846",
+      "name": "Standard Queue Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        380
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create Demo Tickets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Demo Tickets": {
+      "main": [
+        [
+          {
+            "node": "Classify and Route",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify and Route": {
+      "main": [
+        [
+          {
+            "node": "Needs Immediate Escalation?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs Immediate Escalation?": {
+      "main": [
+        [
+          {
+            "node": "Escalation Output",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Standard Queue Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}
