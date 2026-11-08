@@ -56,8 +56,7 @@
               "rightValue": true,
               "operator": {
                 "type": "boolean",
-                "operation": "true",
-                "singleValue": true
+                "operation": "equals"
               }
             }
           ],
@@ -68,7 +67,7 @@
       "id": "8c5440e1-f00f-4adb-8d0f-45dd1d1be844",
       "name": "Needs Immediate Escalation?",
       "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
+      "typeVersion": 2.2,
       "position": [
         880,
         260
