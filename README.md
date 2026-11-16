@@ -1,12 +1,12 @@
-# Ahmed Negm | IT Support Specialist & Automation
+# Ahmed Negm | AI Automation & n8n
 
-**IT Support • Microsoft 365 • Google Workspace • Networking • n8n Automation**
+**AI Automation • n8n • Workflow Integration • IT Administration**
 
-Cairo, Egypt | Open to remote IT Support and IT Operations opportunities
+Cairo, Egypt | Open to freelance and remote opportunities
 
-I have professional **IT Support / IT Administration experience at IT Pillars (2021–2024)** and have worked independently on technical support and freelance projects since 2024. My areas of work include Windows and endpoint troubleshooting, Microsoft 365, Google Workspace, Active Directory, connectivity, Excel reporting, Linux, and workflow automation.
+I'm an AI automation and n8n specialist working with freelance clients since 2024, with a background in **IT Support / IT Administration at IT Pillars (2021–2024)**. I focus on practical business workflows, AI-assisted automation, integrations and technical troubleshooting.
 
-I focus on **practical troubleshooting, clear documentation, and reducing repetitive work**.
+My IT experience includes Windows and endpoint support, Microsoft 365, Google Workspace, Active Directory, networking, Linux and technical documentation. I value clear documentation and reducing repetitive work.
 
 ## Featured portfolio project
 
@@ -18,7 +18,7 @@ A **public learning project** with an importable n8n workflow, example support r
 - [Ticket classification code](projects/n8n-helpdesk-automation/triage.js)
 - [JavaScript test cases](projects/n8n-helpdesk-automation/tests/triage.test.cjs)
 
-**Clear scope:** This is a demonstrative project using fictional examples; it is not presented as a paid client deployment or as an AI-powered workflow.
+**Clear scope:** This is a non-AI, rule-based learning demonstration using fictional examples; it is not a paid client deployment or production deployment.
 
 ## IT support resources
 
@@ -30,12 +30,13 @@ A **public learning project** with an importable n8n workflow, example support r
 
 ## Technical skills
 
+- **AI & automation:** n8n, AI agents and AI-assisted workflows, workflow design, triggers, scheduling, conditional routing, testing and error handling
+- **Integrations:** REST APIs, HTTP requests, webhooks, JSON, data mapping and transformation
+- **Tools:** Docker, self-hosted n8n, Git and GitHub
 - **End-user IT support:** Windows, hardware and software troubleshooting, remote assistance, technical documentation
 - **Accounts & productivity:** Microsoft 365, Google Workspace, Active Directory, user access, Microsoft Excel
 - **Networking:** TCP/IP, IPv4, DNS / DHCP, LAN / Wi-Fi, connectivity troubleshooting
 - **Systems:** Linux administration, cloud fundamentals
-- **Automation:** n8n workflows, JavaScript scripting, data mapping, conditional routing, error handling, Git and GitHub
-- **AI learning:** OpenAI concepts, agent workflows and responsible use of AI-assisted automation
 
 ## Completed training & ongoing development
 
@@ -44,7 +45,12 @@ A **public learning project** with an importable n8n workflow, example support r
 - Applied AI Foundations
 - Agents and Workflows
 
-**n8n:** Completed course modules and continued practical study of triggers, polling and webhooks, Code nodes, Google Sheets integration concepts, error handling, and workflow structure. The names of any additional completed n8n courses are not listed because they have not been provided.
+**Completed: n8n Academy**
+- [n8n Quickstart (QS101)](https://learn.n8n.io/certificates/3c18a9b10ed34cb0aab9144842f8f6f2)
+- [N8N101: Essentials](https://learn.n8n.io/certificates/230dc8ab01cd48bf9807840fdf39c5e3)
+- [N8N102: Integrations, APIs & Connected Workflows](https://learn.n8n.io/certificates/5a6e72d48ad3408c9a7f36c79fa40e93)
+- [N8N103: AI, Testing & Best Practices](https://learn.n8n.io/certificates/0aac25be25b7420b9ac8042e1071c97c)
+- [n8n Foundations Pathway Badge](https://badges.n8n.io/e2efb12e-e310-44f9-8568-171fc3affb8c)
 
 **Networking study:** CompTIA Network+ preparation. My existing study notes:
 - [OSI Model](notes/OSI_model_notes.md)
@@ -54,12 +60,13 @@ These study notes are not represented as completed CCNA, AWS, Azure, or Network+
 
 ## About freelance work
 
-I have worked on independent technical support assignments alongside self-directed technology projects. Public materials here show **examples of my technical approach** and do not expose customer records, client names or private systems.
+I have worked with freelance clients on automation and technical support alongside self-directed projects. Public materials here show **examples of my technical approach** and do not expose customer records, client names or private systems.
 
 ## Contact
 
 - Email: **ahmednegm91@gmail.com**
 - GitHub: [github.com/ahmednegm91](https://github.com/ahmednegm91)
+- [Portfolio and résumé](https://alive-paprika-ffc.notion.site/Ahmed-Negm-41979ae387808083b153e28e919d0919)
 
 ---
 
