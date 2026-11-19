@@ -1,6 +1,6 @@
 # n8n IT Helpdesk Automation | Ticket Triage & Escalation
 
-**Portfolio learning project** demonstrating how an IT team could turn incoming support requests into structured, prioritized tasks. Created as a public example; **not a claimed client delivery or production deployment**.
+**Learning reference.** This unrelated helpdesk demonstration is preserved for reference and is not an original Ahmed Negm portfolio project. It illustrates how an IT team could turn incoming support requests into structured, prioritized tasks.
 
 ## Problem
 
