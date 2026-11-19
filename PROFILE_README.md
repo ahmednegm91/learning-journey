@@ -17,9 +17,6 @@ I enjoy practical troubleshooting, keeping support documentation clear, and crea
 
 ## 🚀 Featured Work
 
-**[n8n IT Helpdesk Ticket Triage & Escalation](https://github.com/ahmednegm91/learning-journey/tree/main/projects/n8n-helpdesk-automation)**  
-Portfolio demo with importable n8n workflow, rules-based P1/P2/P3 routing, escalation branches, sample tickets and JavaScript tests. *Demonstration only, not a customer deployment.*
-
 **[IT Support Troubleshooting Playbook](https://github.com/ahmednegm91/learning-journey/blob/main/docs/it-support-troubleshooting-playbook.md)**  
 Reference checklists for Windows, connectivity, Microsoft 365, Google Workspace, Active Directory and Linux.
 
