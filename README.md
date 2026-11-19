@@ -8,11 +8,11 @@ I'm an AI automation and n8n specialist working with freelance clients since 202
 
 My IT experience includes Windows and endpoint support, Microsoft 365, Google Workspace, Active Directory, networking, Linux and technical documentation. I value clear documentation and reducing repetitive work.
 
-## Featured portfolio project
+## Learning reference
 
 ### [n8n IT Helpdesk Automation: Ticket Triage & Escalation](projects/n8n-helpdesk-automation/README.md)
 
-A **public learning project** with an importable n8n workflow, example support requests, JavaScript-based priority classification (P1/P2/P3), routing, and separate escalation / standard-support branches.
+An unrelated helpdesk learning demonstration preserved as a reference. It is not an original Ahmed Negm portfolio project. It includes an n8n workflow, fictional support requests, JavaScript-based priority classification (P1/P2/P3), and escalation / standard-support branches.
 
 - [Importable n8n workflow](projects/n8n-helpdesk-automation/n8n-workflow.json)
 - [Ticket classification code](projects/n8n-helpdesk-automation/triage.js)
