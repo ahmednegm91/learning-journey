@@ -15,7 +15,6 @@ This is a summary of technical work areas and portfolio demonstrations. Client i
 
 ## Public proof of work
 
-- [IT Helpdesk Automation using n8n](../projects/n8n-helpdesk-automation/README.md) — a **new portfolio demo**, not a client deployment.
 - [Troubleshooting Playbook](./it-support-troubleshooting-playbook.md) — systematic troubleshooting and escalation workflows.
 - [Support Ticket Template](./support-ticket-template.md) — example of documenting resolution steps and decisions.
 - [Networking Study Notes](../notes/OSI_model_notes.md) — foundational networking study.
